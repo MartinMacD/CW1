@@ -20,20 +20,11 @@ public class Dec2HexTest {
 
     @Test
     public void testNullInput() {
-    try {
-	dec2Hex.convert(null);
-	fail("Expected an IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
-    }
+    assertEquals("Your input was empty, please enter a number", dec2Hex.convert(null));
 }
 
     @Test
     public void testStringInput() {
-    try {
-        dec2Hex.convert("abc"); // This will throw an IllegalArgumentException
-        fail("Expected an IllegalArgumentException"); // If no exception is thrown, this fails the test
-    } catch (IllegalArgumentException e) {
-        // Expected exception, test passes
-    }
+    assertEquals("That is not a number, please enter a number", dec2Hex.convert("abc"));
 }
 }
